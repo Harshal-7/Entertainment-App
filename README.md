@@ -93,6 +93,15 @@ By following these steps, you should have both the backend server and frontend a
 
 ### Deployment
 - **Frontend** : https://entertainment-app-frontend-110.onrender.com
-- **Backend** : https://entertainment-app-backend-110.onrender.com
+
+
+### Database Design
+- https://entertainment-app-frontend-110.onrender.com](https://docs.google.com/document/d/sample-doc-link
+
+
+### API Documentation
+- https://documenter.getpostman.com/view/34070941/2sA35LUyeA
+
+
 
 
