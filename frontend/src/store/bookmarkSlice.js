@@ -3,7 +3,6 @@ import axios from "axios";
 import { bookmarkActionUrl } from "../utils/constant.utils";
 import { errorToast, successToast } from "../utils/customToast";
 
-// Thunk for adding a bookmark
 export const addBookmark = createAsyncThunk(
   "bookmark/addBookmark",
   async (mediaData, thunkAPI) => {
@@ -21,14 +20,12 @@ export const addBookmark = createAsyncThunk(
       successToast(data.message);
       return mediaData;
     } catch (error) {
-      // console.log(error);
       errorToast(error.reponse.data.message);
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
 );
 
-// Thunk for removing a bookmark
 export const removeBookmark = createAsyncThunk(
   "bookmark/removeBookmark",
   async (mediaID, thunkAPI) => {
@@ -45,14 +42,12 @@ export const removeBookmark = createAsyncThunk(
       successToast(data.message);
       return mediaID;
     } catch (error) {
-      // console.log(error);
       errorToast(error.reponse.data.message);
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
 );
 
-// Thunk for fetching user bookmarks
 export const fetchUserBookmark = createAsyncThunk(
   "bookmark/fetchUserBookmark",
   async (_, thunkAPI) => {
@@ -82,13 +77,11 @@ export const bookmarkSlice = createSlice({
         state.bookmarks.push(action.payload);
       })
       .addCase(removeBookmark.fulfilled, (state, action) => {
-        // Remove the deleted bookmark from the state
         state.bookmarks = state.bookmarks.filter(
           (bookmark) => (bookmark.mediaId || bookmark.id) != action.payload
         );
       })
       .addCase(fetchUserBookmark.fulfilled, (state, action) => {
-        // Update bookmarks with fetched user bookmarks
         state.bookmarks = action.payload;
       });
   },

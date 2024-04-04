@@ -14,87 +14,85 @@ import TvDetail from "./pages/TvDetail.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 
-// Create browser router configuration
 const router = createBrowserRouter([
-	{
-		path: "/", // Root path
-		element: <App />, // Render the App component
-		children: [
-			{
-				path: "/", // Home page and search media route
-				children: [
-					{
-						path: "/", // Home page route
-						element: <Home />,
-					},
-					{
-						path: "/search/:mediaType/:searchQuery", // Search media route
-						element: <SearchMedia />,
-					},
-				],
-			},
-			{
-				path: "/movie", // Movie routes
-				children: [
-					{
-						path: "/movie", // Movie home route
-						element: <Movie />,
-					},
-					{
-						path: "/movie/search/:mediaType/:searchQuery", // Movie search route
-						element: <SearchMedia />,
-					},
-				],
-			},
-			{
-				path: "/tv", // TV routes
-				children: [
-					{
-						path: "/tv", // TV home route
-						element: <Tv />,
-					},
-					{
-						path: "/tv/search/:mediaType/:searchQuery", // TV search route
-						element: <SearchMedia />,
-					},
-				],
-			},
-			{
-				path: "/bookmarks", // Bookmarks routes
-				children: [
-					{
-						path: "/bookmarks", // Bookmarks home route
-						element: <Bookmarks />,
-					},
-					{
-						path: "/bookmarks/search/:mediaType/:?searchQuery", // Bookmarks search route
-						element: <SearchMedia />,
-					},
-				],
-			},
-		],
-	},
-	{
-		path: "/signup", // Sign up route
-		element: <SignUp />,
-	},
-	{
-		path: "/login", // Login route
-		element: <Login />,
-	},
-	{
-		path: "/movie/:mediaId", // Movie detail route
-		element: <MovieDetail />,
-	},
-	{
-		path: "/tv/:mediaId", // TV detail route
-		element: <TvDetail />,
-	},
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+          {
+            path: "/search/:mediaType/:searchQuery",
+            element: <SearchMedia />,
+          },
+        ],
+      },
+      {
+        path: "/movie",
+        children: [
+          {
+            path: "/movie",
+            element: <Movie />,
+          },
+          {
+            path: "/movie/search/:mediaType/:searchQuery",
+            element: <SearchMedia />,
+          },
+        ],
+      },
+      {
+        path: "/tv",
+        children: [
+          {
+            path: "/tv",
+            element: <Tv />,
+          },
+          {
+            path: "/tv/search/:mediaType/:searchQuery",
+            element: <SearchMedia />,
+          },
+        ],
+      },
+      {
+        path: "/bookmarks",
+        children: [
+          {
+            path: "/bookmarks",
+            element: <Bookmarks />,
+          },
+          {
+            path: "/bookmarks/search/:mediaType/:?searchQuery",
+            element: <SearchMedia />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/movie/:mediaId",
+    element: <MovieDetail />,
+  },
+  {
+    path: "/tv/:mediaId",
+    element: <TvDetail />,
+  },
 ]);
 
-// Render the application with Redux store and router provider
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<Provider store={store}>
-		<RouterProvider router={router} />
-	</Provider>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

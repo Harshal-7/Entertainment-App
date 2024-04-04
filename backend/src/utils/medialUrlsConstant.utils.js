@@ -1,4 +1,3 @@
-// URLs for different types of media endpoints
 export const trendingMultiMedia =
 	"https://api.themoviedb.org/3/trending/all/day?language=en-US&page=";
 export const discoverMovieMedia =
