@@ -91,17 +91,6 @@ By following these steps, you should have both the backend server and frontend a
 - **Store**: Redux setup for state management, including slices like `BookmarkSlice.js` for managing bookmarks.
 - **Utils**: Utility functions such as `cookieActionUtils.js` for managing cookies and `customToast.js` for displaying toast notifications.
 
-### Deployment
-- **Frontend** : https://entertainment-app-frontend-110.onrender.com
-
-
-### Database Design
-- https://entertainment-app-frontend-110.onrender.com](https://docs.google.com/document/d/sample-doc-link
-
-
-### API Documentation
-- https://documenter.getpostman.com/view/34070941/2sA35LUyeA
-
 
 
 
